@@ -110,7 +110,7 @@ def run_inference(params, data_dir, exported_model):
     classes = ["Noise", "Speech"]
 
     # Iterate though test data
-    with tf.Session() as sess:
+    with tf.compat.v1.Session() as sess:
         for signal, labels, fn in file_it:
             sess.run(init)
             logger.info(f"Prediction on file {fn} ...")
