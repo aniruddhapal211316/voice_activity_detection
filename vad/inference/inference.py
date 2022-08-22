@@ -106,7 +106,7 @@ def run_inference(params, data_dir, exported_model):
 
     # TensorFlow exported model
     speech_predictor = tf.contrib.predictor.from_saved_model(export_dir=exported_model)
-    init = tf.initializers.global_variables()
+    init = tf.compat.v1.initializers.global_variables()
     classes = ["Noise", "Speech"]
 
     # Iterate though test data
